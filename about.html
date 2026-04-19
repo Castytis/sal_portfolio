@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salvinija - About</title>
+    <meta name="description"
+        content="MA graduate in Communication & Information Studies. Experienced in multi-platform social media, content strategy, and digital marketing.">
+    <meta property="og:title" content="About — Salvinija Kucinskaite">
+    <meta property="og:description"
+        content="MA graduate in Communication & Information Studies. Experienced in multi-platform social media, content strategy, and digital marketing.">
+    <meta property="og:type" content="website">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 100'><text y='.9em' font-size='90' font-family='Georgia,serif' fill='white'>SAL</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['DM Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @media (max-width: 767px) {
+            .skills-list {
+                flex-direction: column !important;
+                gap: 0 !important;
+            }
+
+            .skill-sep {
+                display: none !important;
+            }
+
+            .skill-hover {
+                display: block !important;
+                margin-right: 0 !important;
+                margin-bottom: 0.3em !important;
+            }
+        }
+
+        ::selection {
+            background: #6899b5;
+            color: #0c0c0c;
+        }
+
+        ::-webkit-scrollbar {
+            width: 3px;
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #222;
+        }
+
+        .btn-slide {
+            position: relative;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .btn-slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: white;
+            transform: translateX(-101%);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: -1;
+        }
+
+        .btn-slide:hover::before {
+            transform: translateX(0);
+        }
+
+        .btn-slide:hover {
+            color: #0c0c0c;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            opacity: 0;
+            animation: fadeUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .d1 {
+            animation-delay: 0.1s;
+        }
+
+        .d2 {
+            animation-delay: 0.25s;
+        }
+
+        .d3 {
+            animation-delay: 0.4s;
+        }
+
+        .d4 {
+            animation-delay: 0.55s;
+        }
+
+        ul.list-disc>li::marker {
+            color: #6899b5;
+        }
+
+        .skill-hover {
+            transition: color 0.18s cubic-bezier(0.4, 0, 0.2, 1), font-weight 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .skill-hover:hover {
+            color: #6899b5 !important;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body class="bg-[#0c0c0c] text-white font-sans antialiased">
+
+    <!-- NAV -->
+    <nav class="fixed inset-x-0 top-0 z-50 flex items-center px-6 md:px-16 border-b border-white/[.08] bg-[#0c0c0c]/95 backdrop-blur-sm"
+        style="height:72px;">
+        <!-- Left: logo -->
+        <a href="index.html" class="font-serif font-bold text-white tracking-[.2em] text-2xl mr-auto">SAL</a>
+        <!-- Nav links -->
+        <ul
+            class="flex items-center text-[14px] sm:text-[14px] tracking-[.12em] sm:tracking-[.15em] uppercase text-zinc-400">
+            <li><a href="work.html" class="hover:text-white transition-colors duration-200">Work</a></li>
+            <li><span class="mx-3 sm:mx-5 h-3 w-px bg-white/[.1] inline-block align-middle"></span></li>
+            <li><a href="about.html" class="hover:text-white transition-colors duration-200">About</a></li>
+            <li><span class="mx-3 sm:mx-5 h-3 w-px bg-white/[.1] inline-block align-middle"></span></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors duration-200">Contact</a></li>
+        </ul>
+        <!-- Separator -->
+        <span class="mx-4 sm:mx-8 h-4 w-px bg-white/[.08]"></span>
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/in/yourname" target="_blank" rel="noopener noreferrer"
+            class="text-zinc-400 hover:text-white transition-colors duration-200" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M20.447 20.452H17.09v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.747V9.756h3.22v1.569h.046c.447-.85 1.54-1.747 3.168-1.747 3.39 0 4.018 2.231 4.018 5.132v5.742zM5.337 8.19a1.87 1.87 0 1 1 0-3.742 1.87 1.87 0 0 1 0 3.742zm1.663 12.262H3.674V9.756h3.326v10.696zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+        </a>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <section class="px-8 md:px-16 border-b border-white/[.06]"
+        style="padding-top:calc(72px + 5rem);padding-bottom:5rem;">
+        <p class="fade-up d1 text-lg md:text-3xl  tracking-[.25em] uppercase mb-8" style="color:#6899b5">About</p>
+
+        <h1
+            class="fade-up d2 font-serif tracking-[.05em] text-[clamp(3.5rem,10vw,9rem)] leading-[1.02] text-white max-w-4xl">
+            Salvinija<br>Kucinskaite
+        </h1>
+    </section>
+
+    <!-- BIO + PHOTO -->
+    <section class="px-8 md:px-16 py-16 border-b border-white/[.06]">
+        <div class="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-12 md:gap-20 items-start">
+
+            <!-- Photo -->
+            <div class="overflow-hidden bg-zinc-900 w-full md:w-[320px]" style="aspect-ratio:1/1;">
+                <img src="https://placehold.co/600x600/1a1a1a/444?text=Photo" alt="Salvinija Kucinskaite"
+                    class="w-full h-full object-cover">
+            </div>
+
+            <!-- Bio -->
+            <div class="flex flex-col justify-start gap-6">
+                <p class="text-zinc-300 text-xl md:text-2xl leading-relaxed">
+                    MA graduate in Communication and Information Studies from Vrije Universiteit Amsterdam, specialising
+                    in <span style="color:#6899b5">multimodal communication</span> and <span
+                        style="color:#6899b5">digital content strategy</span>.
+                </p>
+                <p class="text-zinc-300 text-lg md:text-xl leading-relaxed">
+                    Experienced in managing multi-platform social media campaigns, creating engaging visual and written
+                    content, and analysing audience behaviour to optimise performance metrics.
+                </p>
+                <!-- Location + languages -->
+                <div class="flex flex-col gap-3 pt-4 border-t border-white/[.06]">
+                    <div class="flex items-center gap-4">
+                        <span class="text-sm tracking-[.15em] uppercase w-28 shrink-0"
+                            style="color:#6899b5">Location</span>
+                        <span class="text-zinc-300 text-base">Amsterdam, Netherlands</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span class="text-sm tracking-[.15em] uppercase w-28 shrink-0"
+                            style="color:#6899b5">Languages</span>
+                        <span class="text-zinc-300 text-base">English (C2) · Lithuanian (C2) · Dutch (B1)</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span class="text-sm tracking-[.15em] uppercase w-28 shrink-0"
+                            style="color:#6899b5">Email</span>
+                        <a href="mailto:salvinkuci@gmail.com"
+                            class="text-zinc-300 text-base hover:text-white transition-colors duration-200">salvinkuci@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="px-8 md:px-16 py-20 border-b border-white/[.06]">
+        <p class="text-lg md:text-3xl tracking-[.25em] uppercase text-white mb-14">Experience</p>
+
+        <div class="flex flex-col divide-y divide-white/[.06]">
+
+            <!-- Role 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-4 md:gap-12 py-10 first:pt-0">
+                <div>
+                    <p class="text-zinc-500 text-base">Nov 2025 — Present</p>
+                </div>
+                <div>
+                    <p class="font-serif tracking-[.05em] text-white text-2xl md:text-3xl mb-2">Marketing and
+                        Communications Manager</p>
+                    <p class="text-base mb-6" style="color:#6899b5">Popping Bubbles Podcast · Freelance</p>
+                    <ul class="flex flex-col gap-3 text-zinc-400 text-[17px] leading-relaxed list-disc pl-5">
+                        <li>Creating and scheduling content using <span style="color:#6899b5">Canva</span> and <span
+                                style="color:#6899b5">CapCut</span> for <span style="color:#6899b5">Instagram</span>,
+                            <span style="color:#6899b5">LinkedIn</span>, and <span style="color:#6899b5">TikTok</span>.
+                            Tracking performance on <span style="color:#6899b5">Spotify</span> via <span
+                                style="color:#6899b5">Soundcharts</span>.
+                        </li>
+                        <li>Monitoring analytics with <span style="color:#6899b5">Meta Business Suite</span>, <span
+                                style="color:#6899b5">Shield Analytics</span>, and <span
+                                style="color:#6899b5">Exolyt</span> — achieving a <span style="color:#6899b5"><b>12%
+                                    average monthly increase</b></span> in audience engagement.</li>
+                        <li>Managing guest and team communications through <span style="color:#6899b5">Trello</span>,
+                            <span style="color:#6899b5">Slack</span>, and <span style="color:#6899b5">Mailchimp</span>;
+                            coordinating merchandise for on-site campaigns and events.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Role 2 -->
+            <div class="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-4 md:gap-12 py-10">
+                <div>
+                    <p class="text-zinc-500 text-base">Dec 2021 — Aug 2025</p>
+                </div>
+                <div>
+                    <p class="font-serif tracking-[.05em] text-white text-2xl md:text-3xl mb-2">Student Ambassador</p>
+                    <p class="text-base mb-6" style="color:#6899b5">Study in NL · Hybrid</p>
+                    <ul class="flex flex-col gap-3 text-zinc-400 text-[17px] leading-relaxed list-disc pl-5">
+                        <li>Created and published <span style="color:#6899b5">Instagram</span> content using <span
+                                style="color:#6899b5">Canva</span> and <span style="color:#6899b5">CapCut</span> for an
+                            audience of <span style="color:#6899b5"><b>32.7k+ followers</b></span>, contributing to a
+                            <span style="color:#6899b5"><b>7% increase</b></span> in monthly engagement.
+                        </li>
+                        <li>Contributed to an educational <span style="color:#6899b5">YouTube</span> video series
+                            reaching <span style="color:#6899b5"><b>1k+ views</b></span>.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Role 3 -->
+            <div class="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-4 md:gap-12 py-10">
+                <div>
+                    <p class="text-zinc-500 text-base">Sep 2021 — Oct 2022</p>
+                </div>
+                <div>
+                    <p class="font-serif tracking-[.05em] text-white text-2xl md:text-3xl mb-2">Content Creator</p>
+                    <p class="text-base mb-6" style="color:#6899b5">Student Mobility · Remote</p>
+                    <ul class="flex flex-col gap-3 text-zinc-400 text-[17px] leading-relaxed list-disc pl-5">
+                        <li>Managed <span style="color:#6899b5">Meta Business Suite</span> and ad analytics to optimise
+                            marketing campaigns; created insight-driven content using <span
+                                style="color:#6899b5">Canva</span>, <span style="color:#6899b5">Figma</span>, and <span
+                                style="color:#6899b5">DALL·E</span>.</li>
+                        <li>Achieved an average <span style="color:#6899b5"><b>10% monthly growth</b></span> in audience
+                            engagement across <span style="color:#6899b5">Facebook</span>, <span
+                                style="color:#6899b5">Instagram</span>, and <span style="color:#6899b5">LinkedIn</span>.
+                        </li>
+                        <li>Collaborated with a <b>10-member international team</b> using <span
+                                style="color:#6899b5">Google Workspace</span> and <span style="color:#6899b5">MS Office
+                                Suite</span>.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="px-8 md:px-16 py-16 border-b border-white/[.06]">
+        <p class="text-lg md:text-3xl tracking-[.25em] uppercase text-white mb-14">Education</p>
+
+        <div class="flex flex-col divide-y divide-white/[.06]">
+
+            <div class="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-4 md:gap-12 py-10 first:pt-0">
+                <div>
+                    <p class="text-zinc-500 text-base">2024 — 2025</p>
+                </div>
+                <div>
+                    <p class="font-serif tracking-[.05em] text-white text-2xl md:text-3xl mb-2">MA Communication and
+                        Information Studies</p>
+                    <p class="text-base mb-4" style="color:#6899b5">Vrije Universiteit Amsterdam · GPA 8.0</p>
+                    <ul class="list-disc pl-5 text-zinc-400 text-[17px] leading-relaxed">
+                        <li>Specialisation in Multimodal Communication.</li>
+                        <li>Thesis on gesture-based emoji use in Instagram communication among native Lithuanian
+                            speakers.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-4 md:gap-12 py-10">
+                <div>
+                    <p class="text-zinc-500 text-base">2020 — 2023</p>
+                </div>
+                <div>
+                    <p class="font-serif tracking-[.05em]  text-white text-2xl md:text-3xl mb-2">BA American Studies</p>
+                    <p class="text-base mb-4" style="color:#6899b5">Rijksuniversiteit Groningen · GPA 7.8</p>
+                    <ul class="list-disc pl-5 text-zinc-400 text-[17px] leading-relaxed">
+                        <li>Minor in American Studies at Northern Arizona University.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="px-8 md:px-16 py-20 border-b border-white/[.06]">
+        <p class="text-lg md:text-3xl tracking-[.25em] uppercase text-white mb-14">Skills & Tools</p>
+
+        <div class="flex flex-col divide-y divide-white/[.06]">
+            <!-- Content / Creative -->
+            <div class="flex flex-col md:flex-row md:items-baseline py-8 first:pt-0">
+                <span class="text-lg shrink-0 md:w-[220px] mb-2 md:mb-0" style="color:#6899b5">Content / Creative</span>
+                <span
+                    class="skills-list text-zinc-300 text-[17px] leading-relaxed flex flex-wrap gap-x-2 gap-y-2 md:ml-0">
+                    <span class="skill-hover" style="margin-right:0.2em;">Content Creation & Editing</span>
+                    <span class="skill-sep mx-2 text-white/20 select-none" aria-hidden="true">|</span>
+                    <span class="skill-hover" style="margin-right:0.2em;">Copywriting</span>
+                    <span class="skill-sep mx-2 text-white/20 select-none" aria-hidden="true">|</span>
+                    <span class="skill-hover" style="margin-right:0.2em;">Canva</span>
+                    <span class="skill-sep mx-2 text-white/20 select-none" aria-hidden="true">|</span>
+                    <span class="skill-hover" style="margin-right:0.2em;">CapCut</span>
+                    <span class="skill-sep mx-2 text-white/20 select-none" aria-hidden="true">|</span>
+                    <span class="skill-hover" style="margin-right:0.2em;">Figma</span>
+                    <span class="skill-sep mx-2 text-white/20 select-none" aria-hidden="true">|</span>
+                    <span class="skill-hover" style="margin-right:0.2em;">DALL·E</span>
+                    <span class="skill-sep mx-2 text-white/20 select-none" aria-hidden="true">|</span>
+                    <span class="skill-hover" style="margin-right:0.2em;">Instagram</span>
+                    <span class="skill-sep mx-2 text-white/20 select-none" aria-hidden="true">|</span>
+                    <span class="skill-hover" style="margin-right:0.2em;">LinkedIn</span>
+                    <span class="skill-sep mx-2 text-white/20 select-none" aria-hidden="true">|</span>
+                    <span class="skill-hover" style="margin-right:0.2em;">TikTok</span>
+                    <span class="skill-sep mx-2 text-white/20 select-none" aria-hidden="true">|</span>
+                    <span class="skill-hover" style="margin-right:0.2em;">Spotify</span> </span>
+            </div>
+            <!-- Strategy / Marketing -->
+            <div class="flex flex-col md:flex-row md:items-baseline py-8">
+                <span class="text-lg shrink-0 md:w-[220px] mt-8 mb-2 md:mb-0" style="color:#6899b5">Strategy /
+                    Marketing</span>
+                <span
+                    class="skills-list text-zinc-300 text-[17px] leading-relaxed flex flex-wrap gap-x-2 gap-y-2 md:ml-0">
+                    <span class="skill-hover" style="margin-right:0.2em;">Social Media Management</span>
+                    <span class="skill-sep mx-2 text-white/20 select-none" aria-hidden="true">|</span>
+                    <span class="skill-hover" style="margin-right:0.2em;">Digital Marketing</span>
+                    <span class="skill-sep mx-2 text-white/20 select-none" aria-hidden="true">|</span>
+                    <span class="skill-hover" style="margin-right:0.2em;">Campaign Optimisation</span>
+                    <span class="skill-sep mx-2 text-white/20 select-none" aria-hidden="true">|</span>
+                    <span class="skill-hover" style="margin-right:0.2em;">Audience Analysis</span>
+                    <span class="skill-sep mx-2 text-white/20 select-none" aria-hidden="true">|</span>
+                    <span class="skill-hover" style="margin-right:0.2em;">Trend Analysis</span>
+                </span>
+            </div>
+            <!-- Analytics / Tools -->
+            <div class="flex flex-col md:flex-row md:items-baseline py-8">
+                <span class="text-lg shrink-0 md:w-[220px] mt-8 mb-2 md:mb-0" style="color:#6899b5">Analytics /
+                    Tools</span>
+                <span
+                    class="skills-list text-zinc-300 text-[17px] leading-relaxed flex flex-wrap gap-x-2 gap-y-2 md:ml-0">
+                    <span class="skill-hover" style="margin-right:0.2em;">Meta Business Suite</span>
+                    <span class="skill-sep mx-2 text-white/20 select-none" aria-hidden="true">|</span>
+                    <span class="skill-hover" style="margin-right:0.2em;">Exolyt</span>
+                    <span class="skill-sep mx-2 text-white/20 select-none" aria-hidden="true">|</span>
+                    <span class="skill-hover" style="margin-right:0.2em;">Shield Analytics</span>
+                    <span class="skill-sep mx-2 text-white/20 select-none" aria-hidden="true">|</span>
+                    <span class="skill-hover" style="margin-right:0.2em;">Soundcharts</span>
+                    <span class="skill-sep mx-2 text-white/20 select-none" aria-hidden="true">|</span>
+                    <span class="skill-hover" style="margin-right:0.2em;">Mailchimp</span>
+                    <span class="skill-sep mx-2 text-white/20 select-none" aria-hidden="true">|</span>
+                    <span class="skill-hover" style="margin-right:0.2em;">Jamovi</span>
+                    <span class="skill-sep mx-2 text-white/20 select-none" aria-hidden="true">|</span>
+                    <span class="skill-hover" style="margin-right:0.2em;">Qualtrics</span>
+                    <span class="skill-sep mx-2 text-white/20 select-none" aria-hidden="true">|</span>
+                    <span class="skill-hover" style="margin-right:0.2em;">Google Workspace</span>
+                    <span class="skill-sep mx-2 text-white/20 select-none" aria-hidden="true">|</span>
+                    <span class="skill-hover" style="margin-right:0.2em;">MS Office</span>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT NUDGE -->
+    <section class="px-8 md:px-16 py-20 flex flex-col gap-8 border-t border-white/[.06]">
+        <p class="font-serif text-[clamp(1.6rem,4vw,3rem)] leading-tight text-white max-w-lg">Let's create together.</p>
+        <a href="contact.html"
+            class="btn-slide self-start inline-block border text-white text-[14px] tracking-[.15em] uppercase px-12 py-5 transition-colors duration-200"
+            style="border-color:#6899b5">Get in touch</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="relative px-6 md:px-16 py-10 flex items-center border-t border-white/[.06]">
+        <!-- Left: logo -->
+        <a href="index.html" class="font-serif text-white tracking-[.2em] text-base mr-auto">SAL</a>
+        <!-- Center: links -->
+        <ul
+            class="flex items-center text-[13px] tracking-[.12em] sm:tracking-[.15em] uppercase text-zinc-500 absolute left-1/2 -translate-x-1/2">
+            <li><a href="work.html" class="hover:text-white transition-colors duration-200">Work</a></li>
+            <li><span class="mx-3 sm:mx-4 h-3 w-px bg-white/[.1] inline-block align-middle"></span></li>
+            <li><a href="about.html" class="hover:text-white transition-colors duration-200">About</a></li>
+            <li><span class="mx-3 sm:mx-4 h-3 w-px bg-white/[.1] inline-block align-middle"></span></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors duration-200">Contact</a></li>
+        </ul>
+        <!-- Right: LinkedIn -->
+        <a href="https://linkedin.com/in/yourname" target="_blank" rel="noopener noreferrer"
+            class="text-zinc-500 hover:text-white transition-colors duration-200 ml-auto" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M20.447 20.452H17.09v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.747V9.756h3.22v1.569h.046c.447-.85 1.54-1.747 3.168-1.747 3.39 0 4.018 2.231 4.018 5.132v5.742zM5.337 8.19a1.87 1.87 0 1 1 0-3.742 1.87 1.87 0 0 1 0 3.742zm1.663 12.262H3.674V9.756h3.326v10.696zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+        </a>
+    </footer>
+
+</body>
+
+</html>
