@@ -56,6 +56,11 @@
     .d2 { animation-delay: 0.25s; }
     .d3 { animation-delay: 0.45s; }
     .d4 { animation-delay: 0.6s; }
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateY(0); opacity: 1; }
+      50% { transform: translateY(6px); opacity: 0.5; }
+    }
+    #scroll-hint svg { animation: scrollBounce 1.8s ease-in-out infinite; }
   </style>
 </head>
 
@@ -102,9 +107,9 @@
     </div>
     <!-- Scroll hint -->
     <div id="scroll-hint" class="absolute bottom-8 inset-x-0 flex justify-center pointer-events-none transition-opacity duration-500">
-      <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="color:#3f3f46">
-        <line x1="6" y1="0" x2="6" y2="13" stroke="currentColor" stroke-width="1"/>
-        <polyline points="1,9 6,15 11,9" stroke="currentColor" stroke-width="1" fill="none"/>
+      <svg width="16" height="28" viewBox="0 0 16 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-[20px] md:h-[34px]" style="color:#71717a">
+        <line x1="8" y1="0" x2="8" y2="18" stroke="currentColor" stroke-width="1.5"/>
+        <polyline points="2,13 8,20 14,13" stroke="currentColor" stroke-width="1.5" fill="none"/>
       </svg>
     </div>
   </section>
@@ -123,7 +128,7 @@
           <img src="https://placehold.co/1400x900/1d2d3e/6899b5?text=Popping+Bubbles+Podcast" alt="Popping Bubbles Podcast"
                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
         </div>
-        <p class="font-serif text-white text-2xl mb-1 group-hover:opacity-70 transition-opacity duration-200">Popping Bubbles Podcast</p>
+        <p class="font-sans font-medium text-white text-xl mb-1 tracking-[.02em] group-hover:opacity-70 transition-opacity duration-200">Popping Bubbles Podcast</p>
         <p class="text-zinc-500 text-[16px]">Content Strategy · Social Media</p>
       </a>
 
@@ -133,7 +138,7 @@
           <img src="https://placehold.co/1400x900/1d2d3e/6899b5?text=Student+Ambassador" alt="Student Ambassador Programme"
                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
         </div>
-        <p class="font-serif text-white text-2xl mb-1 group-hover:opacity-70 transition-opacity duration-200">Student Ambassador Programme</p>
+        <p class="font-sans font-medium text-white text-xl mb-1 tracking-[.02em] group-hover:opacity-70 transition-opacity duration-200">Student Ambassador Programme</p>
         <p class="text-zinc-500 text-[16px]">Content Creation · Copywriting</p>
       </a>
 
@@ -143,7 +148,7 @@
           <img src="https://placehold.co/1400x900/1d2d3e/6899b5?text=Brand+Communications+Strategy" alt="Brand Communications Strategy"
                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
         </div>
-        <p class="font-serif text-white text-2xl mb-1 group-hover:opacity-70 transition-opacity duration-200">Brand Communications Strategy</p>
+        <p class="font-sans font-medium text-white text-xl mb-1 tracking-[.02em] group-hover:opacity-70 transition-opacity duration-200">Brand Communications Strategy</p>
         <p class="text-zinc-500 text-[16px]">Brand Strategy · Copywriting</p>
       </a>
 
