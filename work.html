@@ -57,6 +57,8 @@
         }
         .btn-slide:hover::before { transform: translateX(0); }
         .btn-slide:hover { color: #0c0c0c; }
+
+        .will-fade { opacity: 0; }
     </style>
 </head>
 
@@ -91,9 +93,9 @@
 
     <!-- CONTACT NUDGE -->
     <section class="px-8 md:px-16 py-20 flex flex-col gap-8">
-        <p class="font-serif text-[clamp(1.6rem,4vw,3rem)] leading-tight text-white max-w-lg">Let’s create together</p>
+        <p class="font-serif text-[clamp(1.6rem,4vw,3rem)] leading-tight text-white max-w-lg will-fade">Let's create together</p>
         <a href="contact.html"
-            class="btn-slide self-start inline-block border text-white text-[14px] tracking-[.15em] uppercase px-12 py-5 transition-colors duration-200"
+            class="btn-slide self-start inline-block border text-white text-[14px] tracking-[.15em] uppercase px-12 py-5 transition-colors duration-200 will-fade"
             style="border-color:#6899b5">Get in touch</a>
     </section>
 
@@ -127,11 +129,11 @@
         ];
 
         const grid = document.getElementById('work-grid');
-        projects.forEach((p) => {
+        projects.forEach((p, i) => {
             const card = document.createElement('a');
             card.href = 'projects/' + p.slug + '.html';
-            card.style.cssText = 'display:block;text-decoration:none;';
-            card.className = 'project-card';
+            card.style.cssText = 'display:block;text-decoration:none;animation-delay:' + (i * 0.08 + 0.1) + 's';
+            card.className = 'project-card fade-up';
             card.innerHTML = `
                 <div style="position:relative;overflow:hidden;aspect-ratio:4/3;background:#1a1a1a;">
                     <img src="${p.cover}" alt="${p.title}" class="card-img" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">
@@ -148,6 +150,19 @@
                 </div>`;
             grid.appendChild(card);
         });
+
+        /* ── Scroll-triggered fade for contact nudge ── */
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, idx) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = (idx * 0.15) + 's';
+                    entry.target.classList.add('fade-up');
+                    entry.target.classList.remove('will-fade');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        document.querySelectorAll('.will-fade').forEach(el => observer.observe(el));
     </script>
 
 </body>
