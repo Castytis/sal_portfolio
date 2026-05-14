@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salvinija - Work</title>
+    <meta name="description"
+        content="Projects in content strategy, social media, and communications by Salvinija Kucinskaite.">
+    <meta property="og:title" content="Work — Salvinija Kucinskaite">
+    <meta property="og:description"
+        content="Projects in content strategy, social media, and communications by Salvinija Kucinskaite.">
+    <meta property="og:type" content="website">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 100'><text y='.9em' font-size='90' font-family='Georgia,serif' fill='white'>SAL</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['DM Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::selection { background: #6899b5; color: #0c0c0c; }
+
+        ::-webkit-scrollbar { width: 3px; background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #222; }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(18px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .fade-up { opacity: 0; animation: fadeUp 0.7s cubic-bezier(0.4,0,0.2,1) forwards; }
+        .d1 { animation-delay: 0.1s; }
+        .d2 { animation-delay: 0.25s; }
+        .d3 { animation-delay: 0.4s; }
+
+        .card-img { transition: transform 0.7s cubic-bezier(0.4,0,0.2,1); }
+        .project-card:hover .card-img { transform: scale(1.05); }
+        .project-card:hover .card-overlay { opacity: 1 !important; }
+        .project-card:hover .card-text { transform: translateY(0) !important; opacity: 1 !important; }
+
+        .btn-slide { position: relative; overflow: hidden; z-index: 0; }
+        .btn-slide::before {
+            content: ''; position: absolute; inset: 0; background: white;
+            transform: translateX(-101%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); z-index: -1;
+        }
+        .btn-slide:hover::before { transform: translateX(0); }
+        .btn-slide:hover { color: #0c0c0c; }
+    </style>
+</head>
+
+<body class="bg-[#0c0c0c] text-white font-sans antialiased">
+
+   <!-- NAV -->
+    <nav class="fixed inset-x-0 top-0 z-50 flex items-center px-6 md:px-16 border-b border-white/[.08] bg-[#0c0c0c]/95 backdrop-blur-sm"
+        style="height:72px;">
+        <a href="index.html" class="font-serif font-bold text-white tracking-[.2em] text-2xl mr-auto">SAL</a>
+        <ul
+            class="flex items-center text-[14px] sm:text-[14px] tracking-[.12em] sm:tracking-[.15em] uppercase text-zinc-300">
+            <li><a href="work.html" class="hover:text-white transition-colors duration-200">Work</a></li>
+            <li><span class="mx-3 sm:mx-5 h-3 w-px bg-white/[.1] inline-block align-middle"></span></li>
+            <li><a href="about.html" class="hover:text-white transition-colors duration-200">About</a></li>
+            <li><span class="mx-3 sm:mx-5 h-3 w-px bg-white/[.1] inline-block align-middle"></span></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors duration-200">Contact</a></li>
+        </ul>
+        <span class="mx-4 sm:mx-8 h-4 w-px bg-white/[.08]"></span>
+        <a href="https://www.linkedin.com/in/salvinija-kucinskaite-a53366210/" target="_blank" rel="noopener noreferrer"
+            class="text-zinc-400 hover:text-white transition-colors duration-200" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M20.447 20.452H17.09v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.747V9.756h3.22v1.569h.046c.447-.85 1.54-1.747 3.168-1.747 3.39 0 4.018 2.231 4.018 5.132v5.742zM5.337 8.19a1.87 1.87 0 1 1 0-3.742 1.87 1.87 0 0 1 0 3.742zm1.663 12.262H3.674V9.756h3.326v10.696zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+        </a>
+    </nav>
+
+    <!-- WORK GRID -->
+    <section class="px-8 md:px-16 pb-16 border-b border-white/[.06]" style="padding-top:calc(72px + 2.5rem)">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10" id="work-grid"></div>
+    </section>
+
+    <!-- CONTACT NUDGE -->
+    <section class="px-8 md:px-16 py-20 flex flex-col gap-8">
+        <p class="font-serif text-[clamp(1.6rem,4vw,3rem)] leading-tight text-white max-w-lg">Let’s create together</p>
+        <a href="contact.html"
+            class="btn-slide self-start inline-block border text-white text-[14px] tracking-[.15em] uppercase px-12 py-5 transition-colors duration-200"
+            style="border-color:#6899b5">Get in touch</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="relative px-6 md:px-16 py-10 flex items-center border-t border-white/[.06]">
+        <a href="index.html" class="font-serif text-white tracking-[.2em] text-base mr-auto">SAL</a>
+        <ul class="flex items-center text-[13px] tracking-[.12em] sm:tracking-[.15em] uppercase text-zinc-400 absolute left-1/2 -translate-x-1/2">
+            <li><a href="work.html" class="hover:text-white transition-colors duration-200">Work</a></li>
+            <li><span class="mx-3 sm:mx-4 h-3 w-px bg-white/[.1] inline-block align-middle"></span></li>
+            <li><a href="about.html" class="hover:text-white transition-colors duration-200">About</a></li>
+            <li><span class="mx-3 sm:mx-4 h-3 w-px bg-white/[.1] inline-block align-middle"></span></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors duration-200">Contact</a></li>
+        </ul>
+        <a href="https://www.linkedin.com/in/salvinija-kucinskaite-a53366210/" target="_blank"
+            rel="noopener noreferrer" class="text-zinc-500 hover:text-white transition-colors duration-200 ml-auto"
+            aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452H17.09v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.747V9.756h3.22v1.569h.046c.447-.85 1.54-1.747 3.168-1.747 3.39 0 4.018 2.231 4.018 5.132v5.742zM5.337 8.19a1.87 1.87 0 1 1 0-3.742 1.87 1.87 0 0 1 0 3.742zm1.663 12.262H3.674V9.756h3.326v10.696zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+        </a>
+    </footer>
+
+    <script>
+        const projects = [
+            { title: 'Popping Bubbles Podcast', category: 'Content Strategy · Social Media', cover: 'https://placehold.co/1400x900/1d2d3e/6899b5?text=Popping+Bubbles+Podcast', slug: 'popping-bubbles-podcast' },
+            { title: 'Student Ambassador', category: 'Content Creation · Copywriting', cover: 'https://placehold.co/1400x900/1d2d3e/6899b5?text=Student+Ambassador', slug: 'student-ambassador' },
+            { title: 'Brand Communications Strategy', category: 'Brand Strategy · Copywriting', cover: 'https://placehold.co/1400x900/1d2d3e/6899b5?text=Brand+Communications+Strategy', slug: 'brand-communications-strategy' },
+            { title: 'Multi-Platform Social Campaign', category: 'Social Media · Digital Marketing', cover: 'https://placehold.co/1400x900/1d2d3e/6899b5?text=Multi-Platform+Social+Campaign', slug: 'social-campaign' },
+            { title: 'Digital Marketing Audit', category: 'Digital Marketing · Analytics', cover: 'https://placehold.co/1400x900/1d2d3e/6899b5?text=Digital+Marketing+Audit', slug: 'digital-marketing-audit' },
+            { title: 'MA Research: Multimodal Communication', category: 'Research · Communications', cover: 'https://placehold.co/1400x900/1d2d3e/6899b5?text=MA+Research', slug: 'ma-research' },
+        ];
+
+        const grid = document.getElementById('work-grid');
+        projects.forEach((p) => {
+            const card = document.createElement('a');
+            card.href = 'projects/' + p.slug + '.html';
+            card.style.cssText = 'display:block;text-decoration:none;';
+            card.className = 'project-card';
+            card.innerHTML = `
+                <div style="position:relative;overflow:hidden;aspect-ratio:4/3;background:#1a1a1a;">
+                    <img src="${p.cover}" alt="${p.title}" class="card-img" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">
+                    <div class="card-overlay" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:1.25rem 1.5rem;background:linear-gradient(to top,rgba(0,0,0,0.72) 0%,transparent 55%);opacity:0;transition:opacity 0.32s ease;">
+                        <div class="card-text" style="transform:translateY(8px);opacity:0;transition:transform 0.32s ease,opacity 0.32s ease;">
+                            <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:4px;color:#6899b5;font-family:'DM Sans',sans-serif;">${p.category}</p>
+                            <p style="font-family:'Playfair Display',Georgia,serif;color:#fff;font-size:1.2rem;line-height:1.25;">${p.title}</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding-top:1rem;padding-bottom:0.5rem;">
+                    <p style="font-family:'Playfair Display',Georgia,serif;color:#fff;font-size:1.2rem;margin-bottom:4px;">${p.title}</p>
+                    <p style="color:#71717a;font-size:15px;font-family:'DM Sans',sans-serif;">${p.category}</p>
+                </div>`;
+            grid.appendChild(card);
+        });
+    </script>
+
+</body>
+
+</html>
