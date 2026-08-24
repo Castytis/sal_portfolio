@@ -46,7 +46,7 @@
         .d3 { animation-delay: 0.4s; }
 
         .card-img { transition: transform 0.7s cubic-bezier(0.4,0,0.2,1); }
-        .project-card:hover .card-img { transform: scale(1.05); }
+        .project-card:hover .card-img { transform: scale(1); }
         .project-card:hover .card-overlay { opacity: 1 !important; }
         .project-card:hover .card-text { transform: translateY(0) !important; opacity: 1 !important; }
 
@@ -138,12 +138,14 @@
             card.href = 'projects/' + p.slug + '.html';
             card.style.cssText = 'display:block;text-decoration:none;animation-delay:' + (i * 0.08 + 0.1) + 's';
             card.className = 'project-card fade-up';
+            const overlayBg = 'linear-gradient(to top,rgba(0,0,0,0.92) 0%,rgba(0,0,0,0.58) 45%,transparent 78%)';
+            const categoryColor = '#6899b5';
             card.innerHTML = `
-                <div style="position:relative;overflow:hidden;aspect-ratio:4/3;background:${p.bg};padding:${p.fit==='contain'?'1.5rem':'0'};">
-                    <img src="${p.cover}" alt="${p.title}" class="card-img" style="width:100%;height:100%;object-fit:${p.fit};display:block;" loading="lazy">
-                    <div class="card-overlay" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:1.25rem 1.5rem;background:linear-gradient(to top,rgba(0,0,0,0.72) 0%,transparent 55%);opacity:0;transition:opacity 0.32s ease;">
+                <div style="position:relative;overflow:hidden;aspect-ratio:4/3;background:${p.bg};padding:3rem;max-width:700px;margin:0 auto;">
+                    <img src="${p.cover}" alt="${p.title}" class="card-img" style="width:100%;height:100%;object-fit:contain;display:block;" loading="lazy">
+                    <div class="card-overlay" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:1.25rem 1.5rem;background:${overlayBg};opacity:0;transition:opacity 0.32s ease;">
                         <div class="card-text" style="transform:translateY(8px);opacity:0;transition:transform 0.32s ease,opacity 0.32s ease;">
-                            <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:4px;color:#6899b5;font-family:'DM Sans',sans-serif;">${p.category}</p>
+                            <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:4px;color:${categoryColor};font-family:'DM Sans',sans-serif;">${p.category}</p>
                             <p style="font-family:'DM Sans',sans-serif;font-weight:500;color:#fff;font-size:1.1rem;line-height:1.3;letter-spacing:.02em;">${p.title}</p>
                         </div>
                     </div>
