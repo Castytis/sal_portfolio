@@ -4,10 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Salvinija - Portfolio</title>
-  <meta name="description" content="Portfolio of Salvinija">
-  <meta property="og:title" content="Salvinija">
-  <meta property="og:description" content="Portfolio of Salvinija">
+  <meta name="description" content="Portfolio of Salvinija Kucinskaite: digital content creation, social media management, and communications strategy projects.">
+  <meta property="og:title" content="Salvinija Kucinskaite - Portfolio">
+  <meta property="og:description" content="Digital content creation, social media management, and communications strategy portfolio.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="index.html">
+  <meta property="og:image" content="images/profile-960.jpg">
+  <meta property="og:site_name" content="Salvinija Kucinskaite Portfolio">
+  <meta name="author" content="Salvinija Kucinskaite">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="index.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Salvinija Kucinskaite - Portfolio">
+  <meta name="twitter:description" content="Digital content creation, social media management, and communications strategy portfolio.">
+  <meta name="twitter:image" content="images/profile-960.jpg">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 100'><text y='.9em' font-size='90' font-family='Georgia,serif' fill='white'>SAL</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -56,6 +66,19 @@
     .d2 { animation-delay: 0.25s; }
     .d3 { animation-delay: 0.45s; }
     .d4 { animation-delay: 0.6s; }
+    .project-media {
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+      aspect-ratio: 4 / 3;
+      background: linear-gradient(160deg, #f4f6f8 0%, #ffffff 100%);
+      padding: 1.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+    .group:hover .project-media {
+      border-color: rgba(104, 153, 181, 0.55);
+      transform: translateY(-1px);
+    }
     @keyframes scrollBounce {
       0%, 100% { transform: translateY(0); opacity: 1; }
       50% { transform: translateY(6px); opacity: 0.5; }
@@ -128,8 +151,8 @@
 
       <!-- Card 01 -->
       <a href="projects/popping-bubbles-podcast.html" class="group block">
-        <div class="overflow-hidden mb-5" style="aspect-ratio:4/3;background:#595959;">
-          <img src="/images/podcast-logo.jpg" alt="Popping Bubbles Podcast"
+        <div class="project-media">
+          <img src="images/podcast-logo.jpg" alt="Popping Bubbles Podcast"
                class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105">
         </div>
         <p class="font-sans font-medium text-white text-xl mb-1 tracking-[.02em] group-hover:opacity-70 transition-opacity duration-200">Popping Bubbles Podcast</p>
@@ -138,8 +161,8 @@
 
       <!-- Card 02 -->
       <a href="projects/student-ambassador.html" class="group block">
-        <div class="overflow-hidden mb-5" style="aspect-ratio:4/3;background:#ffffff;padding:1.25rem;">
-          <img src="/images/Study-in-NL-logo.jpg" alt="Study in NL "
+        <div class="project-media">
+          <img src="images/Study-in-NL-logo.jpg" alt="Study in NL "
                class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105">
         </div>
         <p class="font-sans font-medium text-white text-xl mb-1 tracking-[.02em] group-hover:opacity-70 transition-opacity duration-200">Study in NL </p>
@@ -147,9 +170,9 @@
       </a>
 
       <!-- Card 03 -->
-      <a href="projects/brand-communications-strategy.html" class="group block">
-        <div class="overflow-hidden mb-5" style="aspect-ratio:4/3;background:#ffffff;padding:1.25rem;">
-          <img src="/images/RDCNL-logo.jpg" alt="Rescue Dogs and Cats NL"
+      <a href="projects/rescue-dogs-and-cats-NL.html" class="group block">
+        <div class="project-media">
+          <img src="images/RDCNL-logo.jpg" alt="Rescue Dogs and Cats NL"
                class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105">
         </div>
         <p class="font-sans font-medium text-white text-xl mb-1 tracking-[.02em] group-hover:opacity-70 transition-opacity duration-200">Rescue Dogs and Cats NL</p>

@@ -7,10 +7,21 @@
     <title>Salvinija - Projects</title>
     <meta name="description"
         content="Projects in content strategy, social media, and communications by Salvinija Kucinskaite.">
-    <meta property="og:title" content="Work — Salvinija Kucinskaite">
+    <meta property="og:title" content="Projects - Salvinija Kucinskaite">
     <meta property="og:description"
         content="Projects in content strategy, social media, and communications by Salvinija Kucinskaite.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="work.html">
+    <meta property="og:image" content="images/profile-960.jpg">
+    <meta property="og:site_name" content="Salvinija Kucinskaite Portfolio">
+    <meta name="author" content="Salvinija Kucinskaite">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="work.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Projects - Salvinija Kucinskaite">
+    <meta name="twitter:description"
+        content="Projects in content strategy, social media, and communications by Salvinija Kucinskaite.">
+    <meta name="twitter:image" content="images/profile-960.jpg">
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 100'><text y='.9em' font-size='90' font-family='Georgia,serif' fill='white'>SAL</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +57,7 @@
         .d3 { animation-delay: 0.4s; }
 
         .card-img { transition: transform 0.7s cubic-bezier(0.4,0,0.2,1); }
-        .project-card:hover .card-img { transform: scale(1); }
+        .project-card:hover .card-img { transform: scale(1.03); }
         .project-card:hover .card-overlay { opacity: 1 !important; }
         .project-card:hover .card-text { transform: translateY(0) !important; opacity: 1 !important; }
 
@@ -91,6 +102,8 @@
 
     <!-- WORK GRID -->
     <section class="px-8 md:px-16 pb-16 border-b border-white/[.06]" style="padding-top:calc(72px + 2.5rem)">
+        <h1 class="fade-up d1 font-serif tracking-[.05em] text-[clamp(2.2rem,6vw,4.2rem)] leading-[1.05] text-white mb-4">Projects</h1>
+        <p class="fade-up d2 text-zinc-400 text-base md:text-lg leading-relaxed max-w-2xl mb-10">A selection of social media, content strategy, and communications projects.</p>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10" id="work-grid"></div>
     </section>
 
@@ -126,10 +139,10 @@
 
     <script>
         const projects = [
-            { title: 'Popping Bubbles Podcast', category: 'Communications Strategy · Social Media Management · Brand Storytelling', cover: '/images/podcast-logo.jpg', bg: '#595959', fit: 'contain', slug: 'popping-bubbles-podcast' },
-            { title: 'Study in NL', category: 'Digital Content Creation · Copywriting · Brand Storytelling', cover: '/images/Study-in-NL-logo.jpg', bg: '#ffffff', fit: 'contain', slug: 'student-ambassador' },
-            { title: 'Rescue Dogs and Cats NL', category: 'Content Strategy · Social Media Management · Copywriting', cover: '/images/RDCNL-logo.jpg', bg: '#ffffff', fit: 'contain', slug: 'rescue-dogs-and-cats-NL' },
-            { title: 'Student Mobility', category: 'Social Media Management · Brand Storytelling · Digital Marketing', cover: '/images/Stumob-logo.jpg', bg: '#000000', fit: 'contain', slug: 'student-mobility' },
+            { title: 'Popping Bubbles Podcast', category: 'Communications Strategy · Social Media Management · Brand Storytelling', cover: 'images/podcast-logo.jpg', bg: '#595959', fit: 'contain', slug: 'popping-bubbles-podcast' },
+            { title: 'Study in NL', category: 'Digital Content Creation · Copywriting · Brand Storytelling', cover: 'images/Study-in-NL-logo.jpg', bg: '#ffffff', fit: 'contain', slug: 'student-ambassador' },
+            { title: 'Rescue Dogs and Cats NL', category: 'Content Strategy · Social Media Management · Copywriting', cover: 'images/RDCNL-logo.jpg', bg: '#ffffff', fit: 'contain', slug: 'rescue-dogs-and-cats-NL' },
+            { title: 'Student Mobility', category: 'Social Media Management · Brand Storytelling · Digital Marketing', cover: 'images/Stumob-logo.jpg', bg: '#000000', fit: 'contain', slug: 'student-mobility' },
         ];
 
         const grid = document.getElementById('work-grid');
