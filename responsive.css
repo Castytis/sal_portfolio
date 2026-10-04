@@ -1,0 +1,139 @@
+footer > div a {
+    color: #71717a !important;
+}
+
+footer > div a:hover {
+    color: #ffffff !important;
+}
+
+footer > div svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+@media (max-width: 640px) {
+    nav {
+        height: 72px !important;
+        padding: 0 12px !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        column-gap: 8px;
+    }
+
+    nav > a:first-child {
+        margin: 0 !important;
+        flex: 0 0 auto;
+    }
+
+    nav > ul {
+        display: flex !important;
+        justify-content: center;
+        flex: 0 1 auto;
+        width: auto;
+        min-width: 0;
+        gap: 0.5rem;
+        font-size: 14px !important;
+        letter-spacing: 0.04em !important;
+        white-space: nowrap;
+    }
+
+    nav > ul > li:nth-child(even) {
+        display: none !important;
+    }
+
+    nav > ul a,
+    footer > ul a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0 4px;
+    }
+
+    nav > span {
+        display: none !important;
+    }
+
+    nav > div {
+        display: flex !important;
+        justify-content: flex-end;
+        flex: 0 0 auto;
+        gap: 0.5rem !important;
+        margin: 0 !important;
+    }
+
+    nav > .nav-social {
+        display: flex !important;
+    }
+
+    nav > div a {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    nav + div {
+        margin-top: 72px !important;
+    }
+
+    footer {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 8px !important;
+        padding: 20px 12px !important;
+    }
+
+    footer > a:first-child {
+        flex: 0 0 auto;
+        margin: 0 !important;
+    }
+
+    footer > ul {
+        position: static !important;
+        left: auto !important;
+        right: auto !important;
+        translate: none !important;
+        transform: none !important;
+        display: flex !important;
+        flex: 0 1 auto;
+        justify-content: center !important;
+        width: auto;
+        min-width: 0;
+        gap: 0.5rem;
+        font-size: 14px !important;
+        letter-spacing: 0.08em !important;
+        white-space: nowrap;
+    }
+
+    footer > ul > li:nth-child(even) {
+        display: none !important;
+    }
+
+    footer > div {
+        display: flex !important;
+        flex: 0 0 auto;
+        justify-content: flex-end;
+        gap: 0.5rem !important;
+        margin: 0 !important;
+    }
+}
+
+@media (max-width: 380px) {
+    nav {
+        padding-right: 12px !important;
+        padding-left: 12px !important;
+    }
+
+    nav > ul {
+        gap: 0.35rem;
+    }
+
+    footer > ul {
+        gap: 0.35rem;
+        font-size: 11px !important;
+    }
+}

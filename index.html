@@ -105,24 +105,35 @@
     .d3 { animation-delay: 0.45s; }
     .d4 { animation-delay: 0.6s; }
     .project-media {
+      position: relative;
       overflow: hidden;
       margin-bottom: 1.25rem;
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 1 / 1;
       background: linear-gradient(160deg, #f4f6f8 0%, #ffffff 100%);
-      padding: 1.25rem;
       border: 1px solid rgba(255, 255, 255, 0.16);
       transition: border-color 0.3s ease, transform 0.3s ease;
     }
-    .group:hover .project-media {
+    .project-image {
+      position: absolute;
+      inset: 1rem;
+      width: calc(100% - 2rem);
+      height: calc(100% - 2rem);
+      object-fit: contain;
+      transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+    .project-card:hover .project-media {
       border-color: rgba(104, 153, 181, 0.55);
       transform: translateY(-1px);
     }
+    .project-card:hover .project-category { color: #6899b5; }
+    .project-card:focus-visible .project-category { color: #6899b5; }
     @keyframes scrollBounce {
       0%, 100% { transform: translateY(0); opacity: 1; }
       50% { transform: translateY(6px); opacity: 0.5; }
     }
     #scroll-hint svg { animation: scrollBounce 1.8s ease-in-out infinite; }
   </style>
+  <link rel="stylesheet" href="responsive.css">
 </head>
 
 <body class="bg-[#0c0c0c] text-white font-sans antialiased">
@@ -189,33 +200,33 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-12">
 
       <!-- Card 01 -->
-      <a href="projects/popping-bubbles-podcast.html" class="group block">
+      <a href="projects/popping-bubbles-podcast.html" class="project-card block">
         <div class="project-media">
           <img src="images/podcast-logo.jpg" alt="Popping Bubbles Podcast"
-               class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105">
+               class="project-image">
         </div>
-        <p class="font-sans font-medium text-white text-xl mb-1 tracking-[.02em] group-hover:opacity-70 transition-opacity duration-200">Popping Bubbles Podcast</p>
-        <p class="text-zinc-500 text-[16px]">Communications Strategy · Social Media Management · Brand Storytelling</p>
+         <p class="font-sans font-medium text-white text-xl mb-1 tracking-[.02em]">Popping Bubbles Podcast</p>
+        <p class="project-category text-zinc-500 text-[16px]">Communications Strategy · Social Media Management · Brand Storytelling</p>
       </a>
 
       <!-- Card 02 -->
-      <a href="projects/student-ambassador.html" class="group block">
+      <a href="projects/student-ambassador.html" class="project-card block">
         <div class="project-media">
           <img src="images/Study-in-NL-logo.jpg" alt="Study in NL "
-               class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105">
+               class="project-image">
         </div>
-        <p class="font-sans font-medium text-white text-xl mb-1 tracking-[.02em] group-hover:opacity-70 transition-opacity duration-200">Study in NL </p>
-        <p class="text-zinc-500 text-[16px]">Digital Content Creation · Copywriting · Brand Storytelling</p>
+         <p class="font-sans font-medium text-white text-xl mb-1 tracking-[.02em]">Study in NL </p>
+        <p class="project-category text-zinc-500 text-[16px]">Digital Content Creation · Copywriting · Brand Storytelling</p>
       </a>
 
       <!-- Card 03 -->
-      <a href="projects/rescue-dogs-and-cats-NL.html" class="group block">
+      <a href="projects/rescue-dogs-and-cats-NL.html" class="project-card block">
         <div class="project-media">
           <img src="images/RDCNL-logo.jpg" alt="Rescue Dogs and Cats NL"
-               class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105">
+               class="project-image">
         </div>
-        <p class="font-sans font-medium text-white text-xl mb-1 tracking-[.02em] group-hover:opacity-70 transition-opacity duration-200">Rescue Dogs and Cats NL</p>
-        <p class="text-zinc-500 text-[16px]">Content Strategy · Social Media Management · Copywriting</p>
+         <p class="font-sans font-medium text-white text-xl mb-1 tracking-[.02em]">Rescue Dogs and Cats NL</p>
+        <p class="project-category text-zinc-500 text-[16px]">Content Strategy · Social Media Management · Copywriting</p>
       </a>
 
     </div>
@@ -228,7 +239,7 @@
 
   <!-- CONTACT NUDGE -->
   <section class="px-8 md:px-16 py-14 md:py-24 flex flex-col gap-9 border-t border-white/[.06]">
-    <p class="font-serif text-[clamp(1.6rem,4vw,3rem)] leading-tight text-white max-w-lg">Let's connect</p>
+    <p class="font-serif text-[clamp(1.6rem,4vw,3rem)] leading-tight text-white max-w-lg">Let's Connect</p>
     <a href="contact.html" class="btn-slide self-start inline-block border text-white text-[14px] tracking-[.15em] uppercase px-12 py-5 transition-colors duration-200" style="border-color:#6899b5">Get in touch</a>
   </section>
 
@@ -255,6 +266,22 @@
     </footer>
 
   <script>
+    document.querySelectorAll('.project-card').forEach(card => {
+      const image = card.querySelector('.project-image');
+      const category = card.querySelector('.project-category');
+      let pointerActive = false;
+      let focusActive = false;
+      const updateImageScale = () => {
+        const isActive = pointerActive || focusActive;
+        image.style.setProperty('transform', isActive ? 'scale(1.08)' : 'scale(1)', 'important');
+        category.style.setProperty('color', isActive ? '#6899b5' : '#71717a', 'important');
+      };
+      card.addEventListener('pointerenter', () => { pointerActive = true; updateImageScale(); });
+      card.addEventListener('pointerleave', () => { pointerActive = false; updateImageScale(); });
+      card.addEventListener('focus', () => { focusActive = true; updateImageScale(); });
+      card.addEventListener('blur', () => { focusActive = false; updateImageScale(); });
+    });
+
     const scrollHint = document.getElementById('scroll-hint');
     window.addEventListener('scroll', function() {
       scrollHint.style.opacity = window.scrollY > 40 ? '0' : '1';
